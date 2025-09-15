@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Intro component with sign up form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: #fff;
+      }
+
+      body {
+        background-color: royalblue;
+        background-image: url(./images/bg-intro-desktop.png);
+        font-family: Poppins;
+      }
+      .heading {
+        color: #fff;
+        margin-left: 50px;
+      }
+      .heading p {
+        width: 80%;
+      }
+
+      h1 {
+        font-size: 3em;
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        font-size: 16px;
+        place-items: center;
+      }
+
+      .form {
+        background-color: #fff;
+        width: 450px;
+        height: 460px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+        border-radius: 0.5em;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .free {
+        background-color: hsl(248, 32%, 49%);
+        font-size: 14px;
+        color: #fff;
+        width: 449px;
+        text-align: center;
+        padding: 15px;
+        border-radius: 0.5em;
+        word-spacing: 1px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+      }
+      .free span {
+        font-weight: bold;
+      }
+      input {
+        font-family: Poppins;
+        font-size: 12px;
+        padding: 15px;
+        width: 80%;
+        padding-top: 12px;
+        border-radius: 0.5em;
+        border: 1px solid hsl(246, 25%, 77%);
+      }
+
+      .firstname-error {
+        font-size: 11px;
+        font-style: italic;
+        margin-left: 21em;
+      }
+      .lastname-error {
+        font-size: 11px;
+        font-style: italic;
+        margin-left: 21em;
+      }
+      .email-error {
+        font-size: 11px;
+        font-style: italic;
+        margin-left: 21em;
+      }
+      .password-error {
+        font-size: 11px;
+        font-style: italic;
+        margin-left: 21em;
+      }
+
+      .error-img {
+        background-image: url(./images/icon-error.svg);
+        background-repeat: no-repeat;
+        background-position: 95%;
+      }
+
+      input:hover {
+        border-color: black;
+      }
+
+      @keyframes shake {
+        0% {
+          transform: translateX(0);
+        }
+        25% {
+          transform: translateX(-5px);
+        }
+        50% {
+          transform: translateX(5px);
+        }
+        75% {
+          transform: translateX(-5px);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      .error-shake {
+        animation: shake 0.3s ease;
+      }
+
+      .placeholder-color::placeholder {
+        color: red;
+      }
+
+      input:active {
+        transform: translate(0%, 2px);
+      }
+
+      .claim button {
+        background-color: hsl(154, 59%, 51%);
+        width: 390px;
+        height: 50px;
+        text-align: center;
+        color: #fff;
+        text-transform: uppercase;
+        border-radius: 0.2em;
+        border: none;
+        margin-top: 1em;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+        word-spacing: 1px;
+        font-size: 15px;
+        font-family: Poppins;
+      }
+
+      .claim button:active {
+        transform: translate(0%, 4px);
+      }
+      .terms {
+        font-size: 11px;
+        color: hsl(246, 25%, 77%);
+        margin-top: 3em;
+      }
+      .terms span {
+        color: hsl(154, 59%, 51%);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+
+      .submitted {
+        font-family: Quicksand;
+        background-color: white;
+        width: 350px;
+        height: 290px;
+        padding: 8px;
+        font-size: 14px;
+        border-radius: 1em;
+        box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 10;
+      }
+      .submitted img {
+        display: block;
+        margin: 0 auto;
+        width: 120px;
+        height: 120px;
+        padding-top: 16px;
+      }
+
+      .submitted p {
+        padding-top: 30px;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(3px);
+        z-index: 5;
+      }
+      .fade-in {
+        animation: fadeIn 3s forwards;
+      }
+
+      .fade-out {
+        animation: fadeOut 3s forwards;
+      }
+
+      /* Hidden */
+      .hidden {
+        display: none;
+      }
+
+      /* MEDIA QUERIES */
+      /* Mobile */
+      @media (max-width: 600px){
+        main{
+          display: block;
+        }
+
+        .heading{
+          margin-left: 0;
+        }
+
+        .heading h1{
+          width: 100%;
+      }
+
+        .heading p{
+          margin: 0;
+          width: 100%;
+          text-align: center;
+        }
+
+        .free{
+          width: 300px;
+          margin: 0 auto;
+        }
+
+        .form{
+          width: 300px;
+          height: 470px;
+          margin-top: 2em;
+        }
+        .form-section{
+          margin-top: 2em;
+        }
+
+        .firstname-error{
+          margin-left: 10em;
+        }
+
+        .lastname-error{
+          margin-left: 10em;
+        }
+
+        .email-error{
+          margin-left: 10em;
+        }
+
+        .password-error{
+          margin-left: 10em;
+        }
+
+         .claim button{
+          width: 270px;
+         }
+
+         .terms{
+          text-align: center;
+         }
+
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="heading">
+        <h1>Learn to code by watching others</h1>
+        <p>
+          See how experienced developers solve problems in real-time. Watching
+          scripted tutorials is great, but understanding how developers think is
+          invaluable.
+        </p>
+      </section>
+
+      <section class="form-section">
+        <p class="free">
+          <span>Try it free 7 days</span> then $20/mo. thereafter
+        </p>
+        <div class="form">
+          <input type="text" placeholder="First Name" class="first-name" />
+          <p class="firstname-error"></p>
+          <input type="text" placeholder="Last Name" class="last-name" />
+          <p class="lastname-error"></p>
+          <input type="text" placeholder="Email Address" class="email" />
+          <p class="email-error"></p>
+          <input type="password" placeholder="Password" class="password" />
+          <p class="password-error"></p>
+
+          <div class="claim">
+            <button class="btn">Claim your free trial</button>
+          </div>
+          <p class="terms">
+            By clicking the button, you are agreeing to our
+            <span>Terms and Services</span>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <div class="submitted hidden">
+      <img
+        src="./images/Green Check Mark, Green Checkmark, Green Tick Mark, Green PNG and Vector with Transparent Background for Free Download.jpg"
+        alt=""
+      />
+      <h2 class="user"></h2>
+      <p>This form has been successfully submitted.😁</p>
+    </div>
+
+    <div class="overlay hidden"></div>
+    <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Allen Enuma</a>.
+    </p>
+  </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
