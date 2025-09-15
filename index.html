@@ -38,6 +38,7 @@
         background-image: url(./images/bg-intro-desktop.png);
         font-family: Poppins;
       }
+
       .heading {
         color: #fff;
         margin-left: 50px;
@@ -84,6 +85,7 @@
       .free span {
         font-weight: bold;
       }
+
       input {
         font-family: Poppins;
         font-size: 12px;
@@ -94,21 +96,32 @@
         border: 1px solid hsl(246, 25%, 77%);
       }
 
+       input:hover {
+        border-color: black;
+      }
+
+       input:active {
+        transform: translate(0%, 2px);
+      }
+
       .firstname-error {
         font-size: 11px;
         font-style: italic;
         margin-left: 21em;
       }
+
       .lastname-error {
         font-size: 11px;
         font-style: italic;
         margin-left: 21em;
       }
+
       .email-error {
         font-size: 11px;
         font-style: italic;
         margin-left: 21em;
       }
+
       .password-error {
         font-size: 11px;
         font-style: italic;
@@ -119,10 +132,6 @@
         background-image: url(./images/icon-error.svg);
         background-repeat: no-repeat;
         background-position: 95%;
-      }
-
-      input:hover {
-        border-color: black;
       }
 
       @keyframes shake {
@@ -151,9 +160,6 @@
         color: red;
       }
 
-      input:active {
-        transform: translate(0%, 2px);
-      }
 
       .claim button {
         background-color: hsl(154, 59%, 51%);
@@ -174,11 +180,13 @@
       .claim button:active {
         transform: translate(0%, 4px);
       }
+
       .terms {
         font-size: 11px;
         color: hsl(246, 25%, 77%);
         margin-top: 3em;
       }
+
       .terms span {
         color: hsl(154, 59%, 51%);
       }
@@ -217,6 +225,7 @@
         text-align: center;
         z-index: 10;
       }
+
       .submitted img {
         display: block;
         margin: 0 auto;
@@ -254,62 +263,66 @@
 
       /* MEDIA QUERIES */
       /* Mobile */
-      @media (max-width: 600px){
-        main{
+      @media (max-width: 600px) {
+        main {
           display: block;
         }
 
-        .heading{
-          margin-left: 0;
+        .heading {
+          margin-left: 1em;
         }
 
-        .heading h1{
+        .heading h1 {
           width: 100%;
-      }
+        }
 
-        .heading p{
+        .heading p {
           margin: 0;
           width: 100%;
         }
 
-        .free{
+        .free {
           width: 300px;
           margin: 0 auto;
         }
 
-        .form{
+        .form {
           width: 300px;
           height: 470px;
           margin-top: 2em;
         }
-        .form-section{
+
+        .form-section {
           margin-top: 2em;
         }
 
-        .firstname-error{
+        .firstname-error {
           margin-left: 10em;
         }
 
-        .lastname-error{
+        .lastname-error {
           margin-left: 10em;
         }
 
-        .email-error{
+        .email-error {
           margin-left: 10em;
         }
 
-        .password-error{
+        .password-error {
           margin-left: 10em;
         }
 
-         .claim button{
+        .claim button {
           width: 270px;
-         }
+        }
 
-         .terms{
+        .terms {
           text-align: center;
-         }
+        }
 
+        .overlay {
+          position: fixed;
+        }
       }
     </style>
   </head>
@@ -360,11 +373,13 @@
 
     <div class="overlay hidden"></div>
     <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Allen Enuma</a>.
-    </p>
-  </footer>
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Allen Enuma</a>.
+      </p>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>
